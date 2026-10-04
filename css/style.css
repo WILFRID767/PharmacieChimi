@@ -1,0 +1,720 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Poppins", sans-serif;
+    background: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+
+}
+
+.container{
+    max-width: 1200px;/*limite de contenu de ma page*/
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* header */
+.header{
+    background: #003366;    
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative; /*for menu toggle*/
+}
+ .navbar .testimonial img{
+    transition: color 0.3s ease;
+ }
+
+/* Conteneur du logo + nom de la pharmacie */
+.testimonial {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Image du logo */
+.testimonial img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    display: block;
+}
+
+/* Nom de la pharmacie */
+.logo {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/* Partie CIE */
+.logo span {
+    color: #07ff6e;
+    transition: color 0.3s ease;
+}
+
+/* Partie -CHIMI */
+.logo .logo-name {
+    color: #FFC107;
+    transition: color 0.3s ease;
+}
+
+/* Effet au survol */
+.logo:hover {
+    color: #fff;
+}
+
+.logo{
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+}
+.logo SPAN{
+     color: #07ff6e;
+     transition: color 0.3s ease;
+}
+.logo pan{
+    color:#FFC107 ;
+    transition: color 0.3s ease;
+}
+.nav-links{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+}
+.nav-links li{
+    margin: 0 10px;
+
+}
+.nav-links a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+.nav-links a:hover{ /*change sa couleur au survol*/
+ color:#FFC107 ;
+
+}
+.nav-links i{
+    margin-right: 5px;
+
+}
+
+.menu-toggle{
+    font-size: 1.5rem;/* pour rendre gros*/
+    color: #fff;
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+    position: absolute; /*ajouter pour le menu toggle(telephone)*/
+    top: 15px;/*(ptit telephone)*/
+    right: 20px;
+    display: none;/*pour le fair disparraitre*/
+    z-index: 10;/*pour etre sur que sava toujour s'afficher*/
+
+}
+.nav-links{
+     transition: transform 0.3s ease;
+    
+}
+
+.nav-links.active{       /*si on n'est sur les petit ecran on va le desactiver et quand on click sur menu il s'ouvre*/
+transform: translateX(0);
+
+}
+/* Responsive*/
+
+@media (max-width: 768px) {
+.menu-toggle{
+    display: block; /*pour le fair rearraitre*/
+}
+
+.nav-links{
+    display: flex; /*pour leur aligner et le reste pour mettre enbas du menu*/
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #003366;
+    width: 200px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 2);
+    z-index: 100;
+   transform: translateX(150%); 
+
+}
+.nav-links li{
+    margin: 10px 0;
+    text-align: center;
+}
+.nav-links a{
+    font-size: 1.2rem;
+    padding: 10px 0;
+}
+.nav-links.active{
+    transform: translateX(0); /*et puis tu met js*/
+}
+}
+
+/* Section hero*/
+.hero{
+    background: url("../assets/back.png") no-repeat center center/cover;
+    height: 100vh;
+    text-align: center;
+    color: #fff;
+}
+.hero .container{
+    background: url("../assets/back.png") no-repeat center center/cover;
+    background: #0003;
+    min-width: 100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.hero h1{
+    font-size: 3rem;/*pour agrossir*/
+    margin-bottom: 20px;
+}
+.hero h1 span{
+color: #FF9900;
+}
+.hero p{
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+.hero .btn{
+    display: inline-block;
+    padding: 10px 20px;
+    background: #FF9900;
+    font-size: 1rem;
+    color: #fff;
+    text-decoration: none;
+    background-repeat: 5px;
+    transition: background 0.3s ease;
+}
+.hero .btn:hover{/*ajoute le hover*/
+background: #cC7a00;
+}
+
+/*SECTION DE SERVICE*/
+.services{
+    padding: 80px 0;
+    background-color: #f8f8f8;
+    
+}
+.service-tittle{
+    text-align: center;
+    font-size: 2.5rem;
+    color: #003366;
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+.services-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
+gap: 30px;
+margin-top: 30px;
+justify-items: center;
+
+}
+.service-card{
+    background-color: #fff;
+    background-repeat: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: auto;
+    text-align: center;
+    padding: 20px;
+    max-width: 350px;
+    height: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+.service-card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+
+}
+
+.service-icon{
+    background-color: #003366;
+    padding: 20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.service-card:hover .service-icon{
+    transform: scale(1.1);
+}
+.service-icon{
+font-size: 25px;
+}
+.service-card h3{
+    font-size: 1.8rem;
+    color: #003366;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+.service-card p{
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Responsive*/
+
+@media (max-width: 768px) {
+    .service-tittle{
+        font-style: 2rem;
+    }
+
+    .service-card{
+        max-width: 100%;
+    }
+}
+
+/*secction de temoinage */
+
+.testimonilas{
+    background-color: #003366;
+    color: #fff;
+    padding: 50px 0;
+}
+.testimonilas h2{
+    text-align: center;
+    margin-bottom: 40px;
+}
+.swiper-wrapper{
+    display: flex;
+}
+.swiper-slide{
+    text-align: center;
+    font-style: 1.2rem;
+    padding: 20px;
+}
+.testimonial img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15PX;
+    object-fit: cover;
+}
+.swiper-slide h4{
+margin-top: 10px;
+font-size: 1rem;
+color: #ff9900;
+}
+.swiper-pagination{
+    text-align: center;
+    margin-top: 30px;
+   
+}
+.swiper-pagination-bullet-active{
+    background-color: #ff9900 !important;
+}
+/* Responsive*/
+
+@media (max-width: 768px) {
+    .testimonilas img{
+        width: 60px;
+        height: 60px;
+    }
+    .testimonial p{
+        font-style: 1rem;
+    }
+    .testimonial h4{
+        font-style: 0.9rem;
+    }
+}
+/*<!---secction de realisation 5---->*/
+.projects{
+    padding: 50px 15px;
+}
+.projects h2{
+    text-align: center;
+    margin-bottom: 40px;
+    font-style: 2.5rem;
+    color: #003366;
+}
+.projects-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
+    gap: 20px;
+}
+.project-card{
+    background-color: #fff;
+    border-radius: 8px;
+    block-size: 4px 8px rgba(0, 0, 0, 1);
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer ;
+    pointer-events: url("services.html") no-repeat center center/cover;;
+    transition: transform 0.3s ease,  box-shadow 0.3s ease;
+}
+.project-card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 2) ;
+}
+
+.project-card img{
+    width: 100%;
+    height: 200PX;
+    object-fit: cover;
+}
+.project-card h3{
+    font-size: 1.5rem;
+    margin: 20px 0 10px;
+    color: #003366;
+
+}
+.project-card p{
+    font-size: 1rem;
+    color: #555;
+}
+
+/*<!---secction de footer 6---->*/
+
+footer {
+    background-color:  #003366;
+    font-size: 0.9rem;
+    padding: 50px 15px;
+    text-align: center;
+    background: #003366;
+    color: #fff;
+    
+}
+
+/*debut page service*/
+.services-banner{
+    background-color: #002244;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.services-grid.service-page{
+    
+    grid-template-columns: repeat(auto-fit,minmax(200px, 1fr));
+}
+
+@media (max-width:768px) {
+    .services-grid{
+        grid-template-columns: 1fr;
+    }
+}
+
+.faq{
+    padding: 50px 15px;
+    background-color: #f9f9f9;
+}
+.faq h2{
+    text-align: center;
+    margin-bottom: 30px;
+}
+ .faq-item {
+    margin-bottom: 20px;
+    cursor: pointer;
+ }
+ .faq-item h3{
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #003366;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s ease;
+ }
+  .faq-item h3:hover{
+    color: #0073e6;
+  }
+
+.faq-item .faq-answer{
+    max-height: 0;
+    overflow: hidden;
+    font-size: 1rem;
+    padding: 0 15px;
+    color: #555;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+.faq-item.active .faq-answer{
+    max-height: 200px;
+    padding: 10px 15px;
+}
+.faq-item.active h3{
+    color: #0073e6;
+}
+.faq-item .icon{
+    font-size: 1.2rem;
+    color: #003366;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.faq-item.active .icon{
+    color: #0073e6;
+    transform: rotate(180deg);
+}
+/*FIN page service*/
+
+/*debut page  about*/
+.main-header{
+    padding: 100px 15px;
+    background-color: #001f3f;
+    color: #fff;
+    text-align: center;
+}
+.main-header h1{
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+
+}
+.main-header p{
+    font-size: 1.2rem;
+}
+.our-story .content{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.our-story .text{
+    flex: 1;
+    font-size: 1.1rem;
+    color: #333;
+}
+.our-story .image img{
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.our-values .values-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+.our-values .values-item{
+    padding: 20px;
+    border-radius: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #f9f9f9;
+
+}
+.our-values .values-item h3{
+    margin-bottom: 10px;
+    color: #003366;
+}
+
+.our-team .team-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+.our-team .team-member img{
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+.our-team .team-member h3{
+    color: #003366;
+    margin-bottom: 5px;
+}
+/*FIN page about*/
+
+/*debut page portfolio*/
+.portfolio-header{
+    padding: 100px 15px;
+    background-color: #001f3f;
+    color: #fff;
+    text-align: center;
+}
+
+.portfolio-gallery .gallery-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.portfolio-gallery .gallery-item{
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+.portfolio-gallery .gallery-item img{
+    width: 100%;
+    display: block;
+    transition: transform 0.3s ease;
+}
+.portfolio-gallery .gallery-item:hover img{
+    transform: scale(1.1);
+}
+.portfolio-gallery .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    text-align: center;
+    transition: opacity 0.3s ease;
+
+}
+.portfolio-gallery .gallery-item:hover .overlay{
+    opacity: 1;
+}
+.portfolio-testimonials{
+    padding: 50px 15px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+.portfolio-testimonials .testimonial{
+    width: 600px;
+    margin: 0 auto 20px;
+    font-style: italic;
+    color: #333;
+}
+
+.portfolio-testimonials .testimonial h3{
+    margin-top: 10px;
+    font-weight: bold;
+    color: #003366;
+}
+.portfolio-contact{
+    padding: 50px 15px;
+    text-align: center;
+    background: #001f3f;
+    color: #fff;
+
+}
+.portfolio-contact .btn{
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ff9900;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+.portfolio-contact .btn:hover{
+    background: #ff9900;
+}
+
+
+
+/*FIN page portfolio*/
+
+
+
+/*debut page contact*/
+
+.contact-header{
+    padding: 100px 15px;
+    background-color: #001f3f;
+    color: #fff;
+    text-align: center;
+}
+.contact-form{
+    padding: 100px 15px;
+    background-color: #f9f9f9;
+
+}
+.contact-form form{
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.contact-form .form-group{
+    display: flex;
+    flex-direction: column;
+}
+.contact-form .form-group label{
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+.contact-form .form-group input,
+.contact-form .form-group textarea{
+    padding: 10px;
+    border: 1px solide #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.contact-form .form-group textarea{
+    resize: vertical;
+    min-height: 100px;
+}
+.contact-form .btn{
+    align-self: center;
+    padding: 10px 20px;
+    background-color: #ff9900;
+    color: #fff;
+    bottom: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.contact-form .btn:hover{
+    background-color: #cC7a00;
+}
+.contact-form .form-message{
+    margin-top: 20px;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+}
+.form-group.success{
+    color: green;
+}
+.form-group.error{
+    color: red;
+}
+.contact-map{
+    padding: 50px 15px;
+    text-align: center;
+    background-color: #001f3f;
+    color: #fff;
+}
+.contact-map #map{
+    width: 100%;
+    height: 300px;
+    background: #ddd;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+/*FIN page contact*/

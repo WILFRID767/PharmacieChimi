@@ -1,0 +1,1034 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Partagez votre expérience et laissez un commentaire sur la Pharmacie Chimi.">
+
+    <meta name="author" content="Pharmacie Chimi">
+
+    <title>Commentaires | Pharmacie Chimi</title>
+
+ <!--Liens des styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.css" integrity="sha512-E+53kXnJyuZFSz75xSmTfCpUNj3gp9Bd80TeQQMTPJTVWDRHPOpEYczGwWtsZXvaiz27cqvhdH8U+g/NMYua3A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!--GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <!--AOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK7" />
+
+    <!--swiper -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css" crossorigin="anonymous" />
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   
+    <!-- =========================
+         CSS PRINCIPAL
+    ========================== -->
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <!-- =========================
+         FONT AWESOME
+    ========================== -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.css"
+        integrity="sha512-E+53kXnJyuZFSz75xSmTfCpCpV3j3gp9Bd80TeQQMTPJTVWDRHPOpEYczGwWtsZXvaiz27cqvhdH8U+g/NMYua3A=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer">
+
+
+    <!-- =========================
+         GOOGLE FONTS
+    ========================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <!-- =========================
+         AOS
+    ========================== -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+        crossorigin="anonymous">
+
+
+    <!-- =========================
+         SWIPER
+    ========================== -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css"
+        crossorigin="anonymous">
+
+
+    <!-- =========================
+         STYLE PAGE COMMENTAIRES
+    ========================== -->
+    <style>
+
+        /* =========================================
+           SECTION COMMENTAIRES
+        ========================================== */
+
+        .comments-section {
+            padding: 80px 20px;
+            background: #f7f9fb;
+            min-height: 600px;
+        }
+
+
+        .comments-container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+
+        .comments-header {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+
+        .comments-header h1 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+
+        .comments-header h1 span {
+            color: #008f6b;
+        }
+
+
+        .comments-header p {
+            max-width: 700px;
+            margin: auto;
+            color: #666;
+            line-height: 1.8;
+        }
+
+
+        /* =========================================
+           FORMULAIRE
+        ========================================== */
+
+        .comment-form {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+            margin-bottom: 45px;
+        }
+
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-family: "Poppins", sans-serif;
+            font-size: 15px;
+            outline: none;
+            transition: 0.3s;
+            box-sizing: border-box;
+        }
+
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #008f6b;
+            box-shadow: 0 0 0 3px rgba(0, 143, 107, 0.08);
+        }
+
+
+        .form-group textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+
+        .comment-submit {
+            border: none;
+            cursor: pointer;
+            font-family: "Poppins", sans-serif;
+            font-size: 15px;
+        }
+
+
+        /* =========================================
+           MESSAGE DE CONFIRMATION
+        ========================================== */
+
+        .success-message {
+            display: none;
+
+            width: fit-content;
+            max-width: 100%;
+
+            margin: 0 auto 25px auto;
+
+            padding: 12px 18px;
+
+            background: #e9f8f2;
+
+            border: 1px solid #a8dfcd;
+
+            border-left: 4px solid #008f6b;
+
+            border-radius: 8px;
+
+            color: #087a5a;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+            align-items: center;
+
+            gap: 10px;
+        }
+
+
+        .success-message i {
+            font-size: 17px;
+        }
+
+
+        /* =========================================
+           LISTE DES COMMENTAIRES
+        ========================================== */
+
+        .comments-list-section {
+            margin-top: 20px;
+        }
+
+
+        .comments-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            text-align: center;
+            flex-wrap: wrap;
+        }
+
+
+        .comments-title h2 {
+            margin: 0;
+        }
+
+
+        .comments-count {
+            background: #008f6b;
+            color: #fff;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+
+        /* =========================================
+           CARTE COMMENTAIRE
+        ========================================== */
+
+        .comment-card {
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 22px;
+            margin-bottom: 18px;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+            position: relative;
+        }
+
+
+        .comment-user {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 15px;
+        }
+
+
+        .comment-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #008f6b;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 19px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+
+        .comment-user-info h3 {
+            margin: 0;
+            font-size: 16px;
+        }
+
+
+        .comment-date {
+            font-size: 12px;
+            color: #999;
+            margin-top: 3px;
+        }
+
+
+        .comment-text {
+            color: #555;
+            line-height: 1.7;
+            margin: 0;
+            word-wrap: break-word;
+        }
+
+
+        .delete-comment {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            border: none;
+            background: transparent;
+            color: #aaa;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+
+        .delete-comment:hover {
+            color: #d33;
+        }
+
+
+        /* =========================================
+           AUCUN COMMENTAIRE
+        ========================================== */
+
+        .no-comments {
+            text-align: center;
+            background: #fff;
+            padding: 40px 20px;
+            border-radius: 15px;
+            color: #777;
+        }
+
+
+        .no-comments i {
+            font-size: 40px;
+            color: #008f6b;
+            margin-bottom: 15px;
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+        ========================================== */
+
+        @media (max-width: 768px) {
+
+            .comments-section {
+                padding: 60px 15px;
+            }
+
+
+            .comments-header h1 {
+                font-size: 30px;
+            }
+
+
+            .comment-form {
+                padding: 22px;
+            }
+
+
+            .comments-title {
+                flex-direction: column;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+<header class="header">
+    <div class="container navbar">
+        <!--Logo -->
+        <div class="testimonial">
+            <img src="assets/imagey.png" alt="hhhh." data-aos="fade-right">
+            <a href="index.html" class="logo">PHARMA<pan data-aos="fade-right">CIE</pan><span data-aos="fade-up">-CHIMI</span></a>
+        </div>
+        <!--Menu awesom-->
+        <ul class="nav-links">
+            <li><a href="index.html"><i class="fas fa-home"></i>Accueil</a></li>
+            <li><a href="service.html"><i class="fas fa-hand-holding-medical"></i>Service</a></li>
+            <li><a href="portfolio.html"><i class="fas fa-images"></i>Galerie</a></li>
+            <li><a href="about.html"><i class="fas fa-info-circle"></i>À propos</a></li>
+            <li>
+                    <a href="commentaire.html">
+                        <i class="fas fa-comments"></i>
+                        Commentaires
+                    </a>
+                </li>
+            <li><a href="contact.html"><i class="fas fa-address-book"></i>Contact</a></li>
+              
+        </ul>
+ 
+        <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+      
+    </div>
+</header>
+
+
+
+    <!-- =====================================================
+         BANNIÈRE
+    ====================================================== -->
+
+    <section class="services-banner">
+
+        <div class="container" data-aos="fade-up">
+
+            <h1 data-aos="fade-down">
+                Vos commentaires
+            </h1>
+
+            <p data-aos="fade-up">
+                Votre expérience compte. Partagez votre avis
+                sur votre accueil et votre expérience à la
+                Pharmacie Chimi.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SECTION COMMENTAIRES
+    ====================================================== -->
+
+    <section class="services-intro">
+
+        <div class="container" data-aos="fade-up">
+
+            <h2 class="service-tittle" data-aos="fade-right">
+                Partagez votre <span>expérience</span>
+            </h2>
+
+            <p>
+                Vous avez récemment visité la Pharmacie Chimi ?
+                Partagez votre expérience avec notre équipe
+                et avec les autres visiteurs du site.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FORMULAIRE COMMENTAIRE
+    ====================================================== -->
+
+    <section class="contact-form">
+
+        <div class="container">
+
+            <div class="form-group"
+                data-aos="fade-up">
+
+
+                <h2 class="service-tittle"
+                    data-aos="fade-up">
+
+                    <i class="fas fa-comment-medical"></i>
+
+                    Laisser un commentaire
+
+                </h2>
+
+
+                <!-- =========================================
+                     MESSAGE DE CONFIRMATION
+                ========================================== -->
+
+                <div class="success-message"
+                    id="successMessage">
+
+                    <i class="fas fa-check-circle"></i>
+
+                    <span>
+                        Votre commentaire a été publié avec succès.
+                    </span>
+
+                </div>
+
+
+                <!-- =========================================
+                     FORMULAIRE
+                ========================================== -->
+
+                <form id="commentForm">
+
+
+                    <!-- NOM -->
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Votre nom
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Exemple : Jean Dupont"
+                            maxlength="50"
+                            required>
+
+                    </div>
+
+
+
+                    <!-- COMMENTAIRE -->
+
+                    <div class="form-group">
+
+                        <label for="comment">
+                            Votre commentaire
+                        </label>
+
+                        <textarea
+                            id="comment"
+                            name="comment"
+                            placeholder="Partagez votre expérience avec la Pharmacie Chimi..."
+                            maxlength="500"
+                            required></textarea>
+
+                    </div>
+
+
+
+                    <!-- BOUTON -->
+
+                    <button
+                        type="submit"
+                        class="btn comment-submit">
+
+                        <i class="fas fa-paper-plane"></i>
+
+                        Publier mon commentaire
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         LISTE DES COMMENTAIRES
+    ====================================================== -->
+
+    <section class="comments-list-section">
+
+        <div class="container">
+
+            <div class="comments-title"
+                data-aos="fade-up">
+
+                <h2 class="service-tittle">
+
+                    Commentaires des visiteurs
+
+                </h2>
+
+
+                <span
+                    class="comments-count"
+                    id="commentsCount">
+
+                    0 commentaire
+
+                </span>
+
+            </div>
+
+
+
+            <!-- CONTENEUR -->
+
+            <div id="commentsList"
+                data-aos="fade-up">
+
+                <div class="no-comments"
+                    id="noComments">
+
+                    <i class="fas fa-comments"></i>
+
+                    <p>
+                        Aucun commentaire pour le moment.
+                    </p>
+
+                    <p>
+                        Soyez le premier à partager
+                        votre expérience !
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <div class="container">
+
+            <h3>
+                Pharmacie Chimi
+            </h3>
+
+
+            <p>
+                Votre pharmacie de proximité pour vos médicaments,
+                produits de santé et conseils pharmaceutiques.
+            </p>
+
+
+            <p>
+                <i class="fas fa-phone"></i>
+                Contactez-nous pour plus d'informations au +237, 677254180, Yaoundé.
+            </p>
+
+
+            <p>
+                &copy; 2026 Pharmacie Chimi .
+                Tous droits réservés.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         SCRIPTS
+    ====================================================== -->
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+        crossorigin="anonymous">
+    </script>
+
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"
+        crossorigin="anonymous">
+    </script>
+
+
+    <script src="js/main.js"></script>
+
+
+
+    <!-- =====================================================
+         SCRIPT COMMENTAIRES
+    ====================================================== -->
+
+    <script>
+
+        const commentForm =
+            document.getElementById("commentForm");
+
+
+        const commentsList =
+            document.getElementById("commentsList");
+
+
+        const commentsCount =
+            document.getElementById("commentsCount");
+
+
+        const noComments =
+            document.getElementById("noComments");
+
+
+        const successMessage =
+            document.getElementById("successMessage");
+
+
+
+        /* Récupération des commentaires */
+
+        let comments =
+            JSON.parse(
+                localStorage.getItem("pharmacieChimiComments")
+            ) || [];
+
+
+
+        /* =========================================
+           AFFICHER LES COMMENTAIRES
+        ========================================== */
+
+        function displayComments() {
+
+            commentsList.innerHTML = "";
+
+
+            if (comments.length === 0) {
+
+                commentsList.appendChild(noComments);
+
+                commentsCount.textContent =
+                    "0 commentaire";
+
+                return;
+
+            }
+
+
+            commentsCount.textContent =
+                comments.length +
+                (
+                    comments.length > 1
+                        ? " commentaires"
+                        : " commentaire"
+                );
+
+
+
+            comments
+                .slice()
+                .reverse()
+                .forEach(function(comment, index) {
+
+
+                    const card =
+                        document.createElement("div");
+
+
+                    card.className =
+                        "comment-card";
+
+
+                    const firstLetter =
+                        comment.name
+                            .charAt(0)
+                            .toUpperCase();
+
+
+
+                    card.innerHTML = `
+
+                        <div class="comment-user">
+
+                            <div class="comment-avatar">
+                                ${firstLetter}
+                            </div>
+
+                            <div class="comment-user-info">
+
+                                <h3>
+                                    ${escapeHTML(comment.name)}
+                                </h3>
+
+                                <div class="comment-date">
+                                    ${escapeHTML(comment.date)}
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <p class="comment-text">
+                            ${escapeHTML(comment.text)}
+                        </p>
+
+
+                        <button
+                            class="delete-comment"
+                            title="Supprimer ce commentaire"
+                            onclick="deleteComment(${comments.length - 1 - index})">
+
+                            <i class="fas fa-trash"></i>
+
+                        </button>
+
+                    `;
+
+
+                    commentsList.appendChild(card);
+
+                });
+
+        }
+
+
+
+        /* =========================================
+           PROTECTION HTML
+        ========================================== */
+
+        function escapeHTML(text) {
+
+            const div =
+                document.createElement("div");
+
+            div.textContent = text;
+
+            return div.innerHTML;
+
+        }
+
+
+
+        /* =========================================
+           PUBLIER
+        ========================================== */
+
+        commentForm.addEventListener(
+            "submit",
+            function(event) {
+
+                event.preventDefault();
+
+
+                const name =
+                    document.getElementById("name")
+                        .value
+                        .trim();
+
+
+                const text =
+                    document.getElementById("comment")
+                        .value
+                        .trim();
+
+
+
+                if (!name || !text) {
+
+                    return;
+
+                }
+
+
+
+                const now =
+                    new Date();
+
+
+
+                const date =
+                    now.toLocaleDateString(
+                        "fr-FR",
+                        {
+                            day: "2-digit",
+                            month: "2-digit",
+                            year: "numeric"
+                        }
+                    )
+                    +
+                    " à "
+                    +
+                    now.toLocaleTimeString(
+                        "fr-FR",
+                        {
+                            hour: "2-digit",
+                            minute: "2-digit"
+                        }
+                    );
+
+
+
+                const newComment = {
+
+                    name: name,
+
+                    text: text,
+
+                    date: date
+
+                };
+
+
+
+                comments.push(newComment);
+
+
+
+                localStorage.setItem(
+                    "pharmacieChimiComments",
+                    JSON.stringify(comments)
+                );
+
+
+
+                commentForm.reset();
+
+
+                displayComments();
+
+
+
+                /* =========================================
+                   AFFICHER LE PETIT BOX DE CONFIRMATION
+                ========================================== */
+
+                successMessage.style.display =
+                    "flex";
+
+
+
+                /* Faire défiler légèrement vers le message */
+
+                successMessage.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+
+
+
+                /* Faire disparaître le message après 4 secondes */
+
+                setTimeout(function() {
+
+                    successMessage.style.display =
+                        "none";
+
+                }, 4000);
+
+            }
+        );
+
+
+
+        /* =========================================
+           SUPPRIMER UN COMMENTAIRE
+        ========================================== */
+
+        function deleteComment(index) {
+
+            const confirmation =
+                confirm(
+                    "Voulez-vous vraiment supprimer ce commentaire ?"
+                );
+
+
+            if (!confirmation) {
+
+                return;
+
+            }
+
+
+            comments.splice(index, 1);
+
+
+            localStorage.setItem(
+                "pharmacieChimiComments",
+                JSON.stringify(comments)
+            );
+
+
+            displayComments();
+
+        }
+
+
+
+        /* =========================================
+           INITIALISATION
+        ========================================== */
+
+        displayComments();
+
+
+
+        /* =========================================
+           AOS
+        ========================================== */
+
+        if (typeof AOS !== "undefined") {
+
+            AOS.init({
+
+                duration: 800,
+
+                once: true
+
+            });
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
+```
